@@ -7,8 +7,8 @@ import numpy as np
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-i","--input_dataset", required = True, help = "path of the input dataset")
-ap.add_argument("-n","--net", required = True, help = " detect network")
-ap.add_argument("-t","--threshold", required = True, help = "threshold")
+ap.add_argument("-n","--net", required = True, help = "pre-trained model to load (see below for options)")
+ap.add_argument("-t","--threshold", required = True, help = "minimum detection threshold to use")
 
 args = vars(ap.parse_args())
 
