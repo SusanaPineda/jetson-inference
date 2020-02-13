@@ -6,11 +6,11 @@ import cv2
 
 ap = argparse.ArgumentParser()
 
-ap.add_argument("-n","--net", required = True, help = " detect network")
-ap.add_argument("-t","--threshold", required = True, help = "threshold")
-ap.add_argument("-w","--width", required = True, help = "width")
-ap.add_argument("-h","--height", required = True, help = "height")
-ap.add_argument("-c","--camera", required = True, help = "camera")
+ap.add_argument("-n","--net", required = True, default="ssd-mobilenet-v2", help = " detect network")
+ap.add_argument("-t","--threshold", required = True , default=0.5, help = "threshold")
+ap.add_argument("-w","--width", required = True, default=1280, help = "width")
+ap.add_argument("-he","--height", required = True, default=720, help = "height")
+ap.add_argument("-c","--camera", required = True, default="0", help = "camera")
 
 args = vars(ap.parse_args())
 
