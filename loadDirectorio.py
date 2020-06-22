@@ -4,6 +4,7 @@ import os
 import cv2
 import argparse
 import numpy as np
+from time import time
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-i","--input_dataset", required = True, help = "path of the input dataset")
@@ -27,7 +28,10 @@ for img in data:
     frame = cv2.imread(os.path.join(inputURL,img))
     imagen, width, height = jetson.utils.loadImageRGBA(os.path.join(inputURL,img))
 
+    start_time = time()
     detections = net.Detect(imagen, width, height)
+    elapsed_time = time() - start_time
+    print(elapsed_time)
 
     # print only detected traffic lights
     for detection in detections:
